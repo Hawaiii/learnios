@@ -12,6 +12,7 @@
 		CD823E961CE920B200627BB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD823E941CE920B200627BB6 /* Main.storyboard */; };
 		CD823E981CE920B200627BB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD823E971CE920B200627BB6 /* Assets.xcassets */; };
 		CD823E9B1CE920B200627BB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD823E991CE920B200627BB6 /* LaunchScreen.storyboard */; };
+		CD823EA41CE935DE00627BB6 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD823EA31CE935DE00627BB6 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CD823E971CE920B200627BB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD823E9A1CE920B200627BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD823E9C1CE920B200627BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD823EA31CE935DE00627BB6 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		CD823E8F1CE920B200627BB6 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				CD823EA31CE935DE00627BB6 /* CalculatorBrain.swift */,
 				CD823E921CE920B200627BB6 /* ViewController.swift */,
 				CD823E941CE920B200627BB6 /* Main.storyboard */,
 				CD823EA21CE9223C00627BB6 /* Supporting Files */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD823EA41CE935DE00627BB6 /* CalculatorBrain.swift in Sources */,
 				CD823E931CE920B200627BB6 /* ViewController.swift in Sources */,
 				CD823E911CE920B200627BB6 /* AppDelegate.swift in Sources */,
 			);
@@ -301,6 +305,7 @@
 				CD823EA11CE920B200627BB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
