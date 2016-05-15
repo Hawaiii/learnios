@@ -54,14 +54,22 @@
 		CD823E8F1CE920B200627BB6 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				CD823E901CE920B200627BB6 /* AppDelegate.swift */,
 				CD823E921CE920B200627BB6 /* ViewController.swift */,
 				CD823E941CE920B200627BB6 /* Main.storyboard */,
+				CD823EA21CE9223C00627BB6 /* Supporting Files */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		CD823EA21CE9223C00627BB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD823E901CE920B200627BB6 /* AppDelegate.swift */,
 				CD823E971CE920B200627BB6 /* Assets.xcassets */,
 				CD823E991CE920B200627BB6 /* LaunchScreen.storyboard */,
 				CD823E9C1CE920B200627BB6 /* Info.plist */,
 			);
-			path = Calculator;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +104,7 @@
 				TargetAttributes = {
 					CD823E8C1CE920B200627BB6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 3QBQHF22WR;
 					};
 				};
 			};
@@ -249,10 +258,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = learnios.hawaiii.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +272,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = learnios.hawaiii.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
