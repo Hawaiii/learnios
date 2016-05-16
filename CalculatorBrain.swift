@@ -14,6 +14,7 @@ class CalculatorBrain {
     
     func setOperand(operand: Double){
         accumulator = operand
+        description += String(operand)
     }
     
     
@@ -40,16 +41,24 @@ class CalculatorBrain {
     func performOperation (symbol: String){
         if let operation = operations[symbol]{
             switch operation{
+                
             case .Constant (let value):
                 accumulator = value
-//                pending!.firstOperand = accumulator
+                description += symbol
+                
             case .UnaryOperation(let function):
                 accumulator = function(accumulator)
+                description = symbol + "(" + description + ")"
+                
             case .BinaryOperation(let function):
                 executePendingBinaryOperation()
                 pending = pendingBinaryOperationInfo(binaryOperation: function, firstOperand: accumulator)
+                description = "(" + description + ")" + symbol
+                isPartialResult = true
+                
             case .Equals:
                 executePendingBinaryOperation()
+                isPartialResult = false
             }
         }
     }
@@ -72,6 +81,18 @@ class CalculatorBrain {
     var result: Double{
         get { // read-only because only has get and no set
             return accumulator
+        }
+    }
+    
+    private var description = ""
+    
+    var isPartialResult = false
+    
+    func getDescription() -> String {
+        if isPartialResult {
+            return description + "..."
+        } else {
+            return description
         }
     }
 }
