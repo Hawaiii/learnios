@@ -8,10 +8,6 @@
 
 import Foundation
 
-func multiply(op1: Double,op2: Double) -> Double{
-    return op1 * op2
-}
-
 class CalculatorBrain {
     
     private var accumulator = 0.0
@@ -21,17 +17,20 @@ class CalculatorBrain {
     }
     
     
-    var operations: Dictionary<String, Operation> = [
+    private var operations: Dictionary<String, Operation> = [
         "π": Operation.Constant(M_PI),
         "e": Operation.Constant(M_E),
         "√": Operation.UnaryOperation(sqrt),
-        "✕": Operation.BinaryOperation(multiply),
-        // TODO
+        "±": Operation.UnaryOperation({ -$0 }),
+        "✕": Operation.BinaryOperation({ $0 * $1 }),
+        "÷": Operation.BinaryOperation({ $0 / $1 }),
+        "+": Operation.BinaryOperation({ $0 + $1 }),
+        "-": Operation.BinaryOperation({ $0 - $1 }),
         "=": Operation.Equals
         
     ]
     
-    enum Operation {
+    private enum Operation {
         case Constant(Double)
         case UnaryOperation((Double)->Double)
         case BinaryOperation((Double, Double) -> Double)
@@ -65,7 +64,7 @@ class CalculatorBrain {
     
     private var pending: pendingBinaryOperationInfo?
     
-    struct pendingBinaryOperationInfo {
+    private struct pendingBinaryOperationInfo {
         var binaryOperation: (Double, Double) -> Double
         var firstOperand: Double
     }
