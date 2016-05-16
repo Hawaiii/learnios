@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var display: UILabel!
     
     private var userIsInMiddleOfTyping = false
@@ -18,13 +18,18 @@ class ViewController: UIViewController {
         let digit = sender.currentTitle!
         if userIsInMiddleOfTyping{
             let textCurrentlyInDisplay = display.text!
-            display.text = textCurrentlyInDisplay + digit
+            if textCurrentlyInDisplay.rangeOfString(".") != nil && digit == "." {
+                display.text = "0"
+                userIsInMiddleOfTyping = false
+            } else {
+                display.text = textCurrentlyInDisplay + digit
+            }
         } else {
             display.text = digit
         }
         userIsInMiddleOfTyping = true
     }
- 
+    
     private var displayValue: Double {
         get {
             return Double(display.text!)!
@@ -33,7 +38,7 @@ class ViewController: UIViewController {
             display.text = String(newValue)
         }
     }
- 
+    
     private var brain = CalculatorBrain()
     
     @IBAction private func performOperation(sender: UIButton) {
